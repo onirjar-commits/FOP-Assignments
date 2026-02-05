@@ -13,11 +13,10 @@ int main() {
     printf("Enter your choice (1-4): ");
     scanf("%d", &choice);
 
-    printf("Enter two numbers: ");
-    scanf("%f %f", &a, &b);
-}
+printf("Enter two numbers: ");
+scanf("%f %f", &a, &b);
 
-    switch (choice) {
+switch (choice) {
         case 1:
             printf("Result: %.2f\n", a + b);
             break;
