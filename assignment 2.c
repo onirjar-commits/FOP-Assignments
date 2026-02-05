@@ -16,3 +16,27 @@ int main() {
     printf("Enter two numbers: ");
     scanf("%f %f", &a, &b);
 }
+
+    switch (choice) {
+        case 1:
+            printf("Result: %.2f\n", a + b);
+            break;
+        case 2:
+            printf("Result: %.2f\n", a - b);
+            break;
+        case 3:
+            printf("Result: %.2f\n", a * b);
+            break;
+        case 4:
+            if (b != 0) {
+                printf("Result: %.2f\n", a / b);
+            } else {
+                printf("Error: Division by zero is not allowed.\n");
+            }
+            break;
+        default:
+            printf("Invalid choice. Please select a valid option (1-4).\n");
+    }
+
+    return 0;
+}
