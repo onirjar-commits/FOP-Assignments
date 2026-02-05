@@ -12,4 +12,7 @@ int main() {
 
     printf("Enter your choice (1-4): ");
     scanf("%d", &choice);
+
+    printf("Enter two numbers: ");
+    scanf("%f %f", &a, &b);
 }
