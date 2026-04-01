@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <math.h>
 
-// Function to display matrix
 void display(int n, float a[10][10]) {
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
@@ -11,7 +10,6 @@ void display(int n, float a[10][10]) {
     }
 }
 
-// Matrix Addition
 void addition(int r, int c, float a[10][10], float b[10][10]) {
     float sum[10][10];
 
@@ -25,7 +23,6 @@ void addition(int r, int c, float a[10][10], float b[10][10]) {
     }
 }
 
-// Saddle Point
 void saddlePoint(int n, float a[10][10]) {
     int found = 0;
 
@@ -33,7 +30,6 @@ void saddlePoint(int n, float a[10][10]) {
         int min_col = 0;
         float min = a[i][0];
 
-        // Find minimum in row
         for(int j = 1; j < n; j++) {
             if(a[i][j] < min) {
                 min = a[i][j];
@@ -41,7 +37,6 @@ void saddlePoint(int n, float a[10][10]) {
             }
         }
 
-        // Check if it's maximum in column
         int k;
         for(k = 0; k < n; k++) {
             if(a[k][min_col] > min)
@@ -58,7 +53,6 @@ void saddlePoint(int n, float a[10][10]) {
         printf("\nNo Saddle Point found\n");
 }
 
-// Determinant (only for 2x2 or 3x3 for simplicity)
 float determinant(int n, float a[10][10]) {
     float det = 0;
 
@@ -74,7 +68,6 @@ float determinant(int n, float a[10][10]) {
     return det;
 }
 
-// Inverse (only for 2x2)
 void inverse(int n, float a[10][10]) {
     if(n != 2) {
         printf("\nInverse implemented only for 2x2 matrix\n");
@@ -99,7 +92,6 @@ void inverse(int n, float a[10][10]) {
     display(n, inv);
 }
 
-// Magic Square Check
 void magicSquare(int n, float a[10][10]) {
     int i, j;
     float sum = 0, d1 = 0, d2 = 0;
@@ -109,7 +101,6 @@ void magicSquare(int n, float a[10][10]) {
 
     int magic = 1;
 
-    // Row check
     for(i = 1; i < n; i++) {
         float row = 0;
         for(j = 0; j < n; j++)
@@ -119,7 +110,6 @@ void magicSquare(int n, float a[10][10]) {
             magic = 0;
     }
 
-    // Column check
     for(j = 0; j < n; j++) {
         float col = 0;
         for(i = 0; i < n; i++)
@@ -129,7 +119,6 @@ void magicSquare(int n, float a[10][10]) {
             magic = 0;
     }
 
-    // Diagonals
     for(i = 0; i < n; i++) {
         d1 += a[i][i];
         d2 += a[i][n-i-1];
