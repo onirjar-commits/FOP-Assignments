@@ -28,14 +28,6 @@ int main() {
     }
     printf("File copied successfully.\n");
 
-    fwrite(sourceFile, sizeof(char), sizeof(sourceFile), dest);
-    printf("Data written to destination file successfully.\n");
-
-    fseek(dest, 0, SEEK_SET); 
-
-    fread(destFile, sizeof(char), sizeof(destFile), dest);
-    printf("Data read from destination file: %s\n", destFile);
-
     fclose(source);
     fclose(dest);
 
