@@ -27,8 +27,6 @@ int main() {
         fputc(ch, dest);
     }
     printf("File copied successfully.\n");
-    fclose(source);
-    fclose(dest);
 
     fwrite(sourceFile, sizeof(char), sizeof(sourceFile), dest);
     printf("Data written to destination file successfully.\n");
@@ -38,6 +36,8 @@ int main() {
     fread(destFile, sizeof(char), sizeof(destFile), dest);
     printf("Data read from destination file: %s\n", destFile);
 
+    fclose(source);
     fclose(dest);
+
     return 0;
 }
