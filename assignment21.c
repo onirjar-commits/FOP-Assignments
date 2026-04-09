@@ -17,3 +17,18 @@ int main() {
         printf("Could not open source file.\n");
         return 1;
     }
+    dest = fopen(destFile, "w");
+    if (dest == NULL) {
+        printf("Could not open destination file.\n");
+        fclose(source);
+        return 1;
+    }
+    while ((ch = fgetc(source)) != EOF) {
+        fputc(ch, dest);
+    }
+    printf("File copied successfully.\n");
+    fclose(source);
+    fclose(dest);
+
+     return 0;
+}
