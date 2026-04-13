@@ -1,6 +1,16 @@
 #include <stdio.h>
 #include <string.h>
 
+void reverse_string(char *s) {
+    int i, j;
+    char tmp;
+    for (i = 0, j = strlen(s) - 1; i < j; i++, j--) {
+        tmp = s[i];
+        s[i] = s[j];
+        s[j] = tmp;
+    }
+}
+
 int main() {
     char str1[100], str2[100];
     int choice;
@@ -39,8 +49,12 @@ int main() {
                 break;
 
             case 5:
-                strrev(str1); // works in some compilers
+                reverse_string(str1);
                 printf("Reversed = %s\n", str1);
+                break;
+
+            default:
+                printf("Invalid choice\n");
                 break;
 
         }

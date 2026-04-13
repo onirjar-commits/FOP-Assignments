@@ -8,9 +8,9 @@ int main()
 
     printf("Enter the number of random numbers you want: ");
     scanf("%d", &n);
-    srqnd(time(0));
+    srand(time(0));
 
-    printf("Pseudo random numbers :");
+    printf("Pseudo random numbers:\n");
     for(i=1;i<=n;i++) {
         printf("%d\n",rand());
     }
